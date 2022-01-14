@@ -3,14 +3,14 @@
     "WindowPrefix": "",
     "image": "./images/phone_turnback/eye.png",
     "view": [
-        286,
-        231,
-        37,
-        36
+        298,
+        270,
+        50,
+        50
     ],
-    "thresh": 0.9,
-    "white_delay": 2.0,
-    "advance_delay": 2,
+    "thresh": 0.8,
+    "white_delay": 3.0,
+    "advance_delay": 3,
     "advance_delay_2": 0,
     "npc": 0,
     "pokemon_npc": 1,
@@ -21,5 +21,5 @@
         0,
         0
     ],
-    "camera": 3
+    "camera": 0
 }

@@ -52,7 +52,7 @@ class Xorshift(object):
         Returns:
             [int]: random integer value
         """
-        return self.next() % (ma-mi) + min
+        return self.next() % (ma-mi) + mi
 
     def float(self)->float:
         """generate random value in [0,1]
