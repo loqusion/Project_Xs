@@ -294,7 +294,10 @@ class PlayerBlinkGUI(tk.Frame):
     def save_screenshot(self):
         """Save a raw screenshot of the current output for cropping an eye image"""
         with fd.asksaveasfile(initialdir="./", filetypes=[("PNG", ".png")]) as file:
-            cv2.imwrite(file.name,self.raw_screenshot)
+            name = file.name
+            if not name.endswith(".png"):
+                name += ".png" # why doesnt filedialogue do this automatically?
+            cv2.imwrite(name,self.raw_screenshot)
 
     def new_eye(self):
         """Select a new eye image"""
