@@ -1,0 +1,33 @@
+[project]
+name = "project-xs"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "niart120", email = "38847256+niart120@users.noreply.github.com"},
+    { name = "Lincoln LM", email = "73306575+Lincoln-LM@users.noreply.github.com"},
+    { name = "John Bernard", email = "38332081+loqusion@users.noreply.github.com" },
+]
+dependencies = [
+    "Pillow>=9.0.0",
+    "numpy>=1.21.4",
+    "opencv-python>=4.5.4.60",
+    "pyautogui",
+    "pywin32==303 ; sys_platform == 'win32'",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "black>=23.11.0",
+    "mypy>=1.7.0",
+    "ruff>=0.1.6",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
