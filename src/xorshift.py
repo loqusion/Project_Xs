@@ -1,7 +1,10 @@
 """Xorshift Random Number Generator"""
+
+
 class Xorshift:
     """Xorshift Random Number Generator"""
-    def __init__(self,seed_0,seed_1,seed_2,seed_3):
+
+    def __init__(self, seed_0, seed_1, seed_2, seed_3):
         self.seed_0 = seed_0
         self.seed_1 = seed_1
         self.seed_2 = seed_2
@@ -33,11 +36,11 @@ class Xorshift:
 
         return self.seed_3
 
-    def advance(self,length:int):
+    def advance(self, length: int):
         """Skip advances of length"""
         self.get_next_rand_sequence(length)
 
-    def range(self,minimum:int,maximum:int)->int:
+    def range(self, minimum: int, maximum: int) -> int:
         """Generate random integer in range [minimum,maximum)
 
         Args:
@@ -47,17 +50,17 @@ class Xorshift:
         Returns:
             int: random integer
         """
-        return self.next() % (maximum-minimum) + minimum
+        return self.next() % (maximum - minimum) + minimum
 
-    def randfloat(self)->float:
+    def randfloat(self) -> float:
         """Generate random float in range [0,1]
 
         Returns:
             float: random float
         """
-        return (self.next() & 0x7fffff) / 8388607.0
+        return (self.next() & 0x7FFFFF) / 8388607.0
 
-    def rangefloat(self,minimum:float,maximum:float)->float:
+    def rangefloat(self, minimum: float, maximum: float) -> float:
         """Generate random float in range [minimum,maximum]
 
         Args:
@@ -68,13 +71,13 @@ class Xorshift:
             float: random float
         """
         temp = self.randfloat()
-        return temp * minimum + (1-temp) * maximum
+        return temp * minimum + (1 - temp) * maximum
 
-    def get_next_rand_sequence(self,length):
+    def get_next_rand_sequence(self, length):
         """Generate a the next random sequence of length"""
         return [self.next() for _ in range(length)]
 
-    def get_prev_rand_sequence(self,length):
+    def get_prev_rand_sequence(self, length):
         """Generate the previous random sequence of length"""
         return [self.prev() for _ in range(length)]
 
